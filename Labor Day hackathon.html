@@ -1,0 +1,487 @@
+<html>
+  <head>
+      <title>Health@Home</title>
+      <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+      <style>
+        #home {
+          background-color: #ffd580;
+          padding: 100px 175px;
+          margin: 0px 0px;
+        }
+        #name {
+          font-size: 100px;
+          font-family: 'Times New Roman';
+          color: black;
+        }
+        .abtushead {
+          font-size: 50px;
+          color: black;
+          font-family: "Playfair Display";
+        }
+        .abtustxt {
+          font-size: 32px;
+          color: white;
+          font-family: "Alegreya";
+        }
+	      #right {
+          margin-right:200px;
+	        margin-left:0px;
+	        padding:0px;
+        }
+	      #left {
+	        margin-left:100px;
+	        padding:0px;
+	      }
+        #surveybtn {
+          border-color: black;
+          border: 2px solid;
+          color:black;
+          padding:20px;
+          border-radius:8px;
+          background-color:white;
+          font-family:'Times New Roman';
+          font-size: 30px;
+          transition-duration: 0.5s;
+        }
+        #surveybtn:hover {
+          background-color: black;
+          border-color: white;
+          color:white;
+        }
+        #back {
+          text-decoration: none;
+          font-size: 25px;
+          font-family: "Times New Roman";
+          margin-left: 20px;
+
+        }
+        #back:hover {
+          text-decoration: underline;
+        }
+      </style>
+  </head>
+  <body>
+    <div id="home">
+      <center><h1 id="name">Health@Home</h1></center>
+      <center><button width="30" onclick="survey()" id="surveybtn">Find What OTC Meds You Need!</button></center>
+      <br>
+    </div>
+    <div id="abtus">
+      <center><h1 class="abtushead">We Have A Passion</h1></center>
+      <center><p class="abtustxt">With COVID-19 spreading, you may want to know 
+        what medications you need from the safety of your<br>
+        home. Based off a quick questionnaire, we'll give you our best recommendation 
+        for your symptoms!<br>You will no longer have to wait for 2 hours to find out 
+        what medications you need!</p></center>
+      <br>
+      <br>
+    </div>
+    <div id="images">
+      <center><img id="left" width="450" src="https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjExMjYtZS0wMDAyLXguanBn.jpg">
+      <div style="float:right;" id="right">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <img width="600" src="https://see.fontimg.com/api/renderfont4/qZDw5/eyJyIjoiZnMiLCJoIjoxMzAsInciOjIwMDAsImZzIjo2NSwiZmdjIjoiIzAwMDAwMCIsImJnYyI6IiNGRkZGRkYiLCJ0IjoxfQ/SGVhbHRoeSBMaXZpbmcgSXMgR29vZCBMaXZpbmc/chicanos-personal-use-regular.png">
+        <br>
+        <br>
+        <br>
+	      <br>
+	      <br>
+        <br>
+        <br>
+        <br>
+        <img width="590" src="https://upload.wikimedia.org/wikipedia/commons/3/33/Pill_1.jpg">
+      </div></center>
+      <br>
+      <center><h1 class="abtushead">We Have An Answer</h1></center>
+      <center><p class="abtustxt">Ever feel like not getting up from the couch to go to the doctor?  
+        With a quick, simple,<br>easy-to-use survey, you can find out what
+        the best recommendations are for the symptoms you<br>are feeling, so that you can be the best 
+        you! With common symptoms like a cold or a fever, it<br>can cause you to spend hours
+         looking for the right medication, but we have your back! 2<br>
+        minutes and voila, whatever symptom, we will recommend a solution! 
+        Sometimes,<br>going to a doctor is the best course of action, but we will give you the
+        best suggestion to<br>
+        your problem.</p></center>
+        <div></div>
+          <center>
+          <img style="padding: 25px; display: inline-block;" src="https://i.pinimg.com/564x/33/e4/5f/33e45f0117a31a7b8335540e0a9974bc.jpg" width="400">
+          <img style="padding: 25px; display: inline-block;" src="https://i.pinimg.com/564x/c6/7e/9c/c67e9c9b1372e5b543f86132eb52affd.jpg" width="400">
+          <img style="padding: 25px; display: inline-block;" src="https://i.pinimg.com/564x/d9/08/9b/d9089bf18c6945094e03d52e9aa1d309.jpg" width="300">
+          </center>
+        </div>
+    </div>
+    <div id="profile">
+      <div style="background-color: #cbe8c1; padding-bottom: 60px;">
+        <br>
+        <p id="back" onclick="home()">Back</p>
+        <center><img width="400" src="https://see.fontimg.com/api/renderfont4/nRKKR/eyJyIjoiZnMiLCJoIjoxMzAsInciOjIwMDAsImZzIjo2NSwiZmdjIjoiIzAwMDAwMCIsImJnYyI6IiNGRkZGRkYiLCJ0IjoxfQ/TWVkIFF1ZXN0aW9ubmFpcmU/with-story.png">
+        <h1>*DISCLAIMER: This is a recommendation <emphasis>not</emphasis> a prescription!*</h1>
+      </div>
+      <center>
+      <h3 style="font-family: 'Times New Roman';font-size: 40px;">Enter Personal Info First</h3>
+      <span style="font-family: 'Alegreya'; font-size: 40px;">Age (years): </span>
+      <input type="text" id="age" style="width: 100px; height: 35px; font-size: 30px;">
+      <br>
+      <br>
+      <span style="font-family: 'Alegreya'; font-size: 40px;">Weight (pounds): </span>
+      <input type="text" id="weight" style="width: 100px; height: 35px; font-size: 30px;">
+      <br>
+      <br>
+      <br>
+      </center>
+    </div>
+    <div id="survey">
+      <center><span style="font-family: 'Alegreya'; font-size: 40px;">Symptom:</span>
+      <select id="symptoms" onChange="findmed()" style="width: 150px; height: 40px; font-size: 20px;">
+	      <option value="blnk"> </option>
+        <option value="temp">Temperature</option>
+        <option value="pain">Pain</option>
+        <option value="const">Constipation</option>
+        <option value="diar">Diarrhea</option>
+        <option value="fat">Fatigue</option>
+        <option value="ma">Muscle Aches</option>
+        <option value="cgh">Cough</option>
+        <option value="ha">Headache</option>
+        <option value="nsa">Nausea</option>
+        <option value="ar">Acid Reflux</option>
+      </select>
+      <br>
+      <br>
+      <br>
+	    <div id="fllwup"></div>
+      <img class="drugs" id="drug1" style="display:inline-block" width="300">
+      <img class="drugs" id="drug2" style="display:inline-block" width="300">
+      <img class="drugs" id="drug3" style="display:inline-block" width="300">
+      <img class="drugs" id="drug4" style="display:inline-block" width="300">
+      <p id="txtbox" style="font-family: 'Cambria'; font-size: 30px;"></p></center>
+    </div>
+    <script>
+      home();
+      drugsrc = ["https://images.albertsons-media.com/is/image/ABS/960242448-C1N1?$ng-ecom-pdp-desktop$&defaultImage=Not_Available", "https://i-cf65.ch-static.com/content/dam/cf-consumer-healthcare/bp-advil-v2/en_US/products/product-01/advil-tablets.png?auto=format", "https://i5.peapod.com/c/2O/2O6PE.jpg", "https://i5.walmartimages.com/asr/874a3794-a4cc-435d-b900-d172d3f23d04.e6ea3399c017931c4c61e18b2ebb93db.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF", "https://i5.walmartimages.com/asr/e59d4982-7129-4766-abf9-e5712ce6b6d0_1.b847ad3e1be3b53bdef5a81067be2378.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF", "https://www.imodium.com/sites/imodium_us/files/styles/product_image/public/product-images/imodium_softgel_image.png", "https://i5.peapod.com/c/3B/3BRHZ.jpg", "https://i5.walmartimages.com/asr/5942f868-3ab9-4988-b369-2d991f3f1c16.b13f354e2e26d31e324655756b7c733f.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF", "https://i5.peapod.com/c/A6/A69RC.png", "https://images.costco-static.com/ImageDelivery/imageService?profileId=12026540&imageId=1714883-847__1&recipeName=350", "https://i-cf65.ch-static.com/content/dam/cf-consumer-healthcare/bp-excedrin/en_US/products/excedrin-migraine.png.rendition.800.512.png?auto=format", "https://bonine.com/wp-content/uploads/2022/02/Bonine-Group-Shots-scaled.jpg", "https://api.hy-vee.cloud/cdn-cgi/image/f=auto,w=828,q=60,dpr=1/https://e22d0640933e3c7f8c86-34aee0c49088be50e3ac6555f6c963fb.ssl.cf2.rackcdn.com/0037000359050_CL_version_type_large.jpeg", "https://ipcdn.freshop.com/resize?url=https://images.freshop.com/00716837855088/721d9637bcd4a2bee6927b552399fba4_large.png&width=512&type=webp&quality=90"];
+      function getdose(num) {
+        var age = parseInt($("#age").val());
+        var weight = parseInt($("#weight").val());
+        switch (num) {
+          case 1:
+            if (weight <= 11) {
+              return " 1.25 mL Syrup of ";
+            } else if (weight <= 17) {
+              return " 2.5 mL Syrup of ";
+            } else if (weight <= 23) {
+              return " 1 1/2 80mg Chewable Tablets of ";
+            } else if (weight <= 35) {
+              return "2 80mg Chewable Tablets of ";
+            } else if (weight <= 47) {
+              return " 3 80mg Chewable Tablets of ";
+            } else if (weight <= 59) {
+              return " 1 325mg Tablet of ";
+            } else if (weight <= 71) {
+              return " 1 325mg Tablet of ";
+            } else if (weight <= 95) {
+              return " 1 1/2 325mg Tablets of ";
+            } else if (Number.isInteger(weight)) {
+              return " 2 325mg Tablets of "
+            } else {
+              return " (undefined dosage) "
+            }
+            break;
+          case 2:
+          if (weight <= 17) {
+              return " 2.5mL Liquid of ";
+            } else if (weight <= 23) {
+              return " 4mL Liquid of ";
+            } else if (weight <= 35) {
+              return " 2 50mg Chewable Tablets of ";
+            } else if (weight <= 47) {
+              return " 3 50mg Chewable Tablets of ";
+            } else if (weight <= 59) {
+              return " 1 200mg Tablet of ";
+            } else if (weight <= 71) {
+              return " 1 200mg Tablet of ";
+            } else if (weight <= 95) {
+              return " 1 1/2 200mg Tablets of ";
+            } else if (Number.isInteger(weight)) {
+              return " 2 200mg Tablets of ";
+            } else {
+              return " (undefined dosage) "
+            }
+            break;
+          case 3:
+            if (age < 12) {
+              return " No ";
+            } else if (Number.isInteger(age)) {
+              return " 1 caplet/liquid gel of ";
+            } else {
+              return " (undefined dosage) "
+            }
+            break;
+          case 4:
+            if (age <= 1) {
+              return " 1 teaspoon of ";
+            } else if (age < 3) {
+              return " 2 teaspoons of ";
+            } else if (age < 7) {
+              return " 4 teaspoons of ";
+            } else if (Number.isInteger(age)) {
+              return " 1 capful of ";
+            } else {
+              return " (undefined dosage) "
+            }
+            break;
+          case 5:
+            if (age < 12) {
+              return " No ";
+            } else if (Number.isInteger(age)) {
+              return " 1 tablet of ";
+            } else {
+              return " (undefined dosage) "
+            }
+            break;
+          case 6:
+            if (age <= 2) {
+              return " No ";
+            } else if (age < 5) {
+              return " a doctor's recomendations for ";
+            } else if (age < 11) {
+              return " 1 caplet of ";
+            } else if (Number.isInteger(age)) {
+              return " 2 caplets of ";
+            } else {
+              return " (undefined dosage) "
+            }
+            break;
+          case 7:
+            if (age <= 12) {
+              return " No ";
+            } else if (Number.isInteger(age))  {
+              return " 1 tablet ";
+            } else {
+              return " (undefined dosage) "
+            }
+            break;
+          case 8:
+            if (weight <= 11) {
+              return " 1.25mL of 160mg/5mL Liquid of ";
+            } else if (weight <= 17) {
+              return " 2.5 160mg/5mL Liquid of ";
+            } else if (weight <= 23) {
+              return " 1 1/2mL of 80mg Chewable Tablets of ";
+            } else if (weight <= 35) {
+              return " 2 80mg Chewable Tablets of ";
+            } else if (weight <= 47) {
+              return " 3 80mg Chewable Tablets of ";
+            } else if (weight <= 59) {
+              return " 1 325mg Tablet of ";
+            } else if (weight <= 71) {
+              return " 1 325mg Tablet of ";
+            } else if (weight <= 95) {
+              return " 1 1/2 325mg Tablet of ";
+            } else if (Number.isInteger(weight)) {
+              return " 2 325mg Tablet of ";
+            } else {
+              return " (undefined dosage) "
+            }
+            break;
+          case 9:
+            if (age < 12) {
+              return " No ";
+            } else if (age < 18) {
+              return " 1 Tablet of ";
+            } else if (Number.isInteger(age)) {
+              " 2 Tablets of ";
+            } else {
+              return " (undefined dosage) "
+            }
+            break;
+          case 10:
+            if (weight <= 24) {
+              return " 4mL of 12.5mg/5mL Liquid of ";
+            } else if (weight <= 37) {
+              return " 1 12.5mg Tablet of ";
+            } else if (weight <= 49) {
+              return " 1 1/2 12.5mg Tablets of ";
+            } else if (weight <= 99) {
+              return " 1 25mg Tablets of ";
+            } else if (Number.isInteger(weight)) {
+              return " 2 25mg Tablets of ";
+            } else {
+              return " (undefined dosage) "
+            }
+            break;
+          case 11:
+            if (age < 18) {
+              return " No ";
+            } else if (Number.isInteger(age)) {
+              return " 2 250mg Tablets of ";
+            } else {
+              return " (undefined dosage) "
+            }
+            break;
+          case 12:
+            if (age < 12) {
+              return " No ";
+            } else if (age < 18) {
+              return " a doctor's recommendation for ";
+            } else if (Number.isInteger(age)) {
+              return " 25 - 50mg of ";
+            } else {
+              return " (undefined dosage) "
+            }
+            break;
+          case 13:
+            if (age < 18) {
+              return " a doctor's recommendation for ";
+            } else if (Number.isInteger(age)) {
+              return " 20mg Tablet of ";
+            } else {
+              return " (undefined dosage) "
+            }
+            break;
+          case 14:
+            if (weight < 89) {
+              return " No ";
+            } else if (Number.isInteger(weight)) {
+              return "20mg Tablet of ";
+            } else {
+              return " (undefined dosage) "
+            }
+            break;
+        }
+      }
+      function showimg(src1, src2, src3, src4) {
+        var imgaddrs = [src1, src2, src3, src4];
+        for (var i = 0; i < 4; i++) {
+          if (imgaddrs[i] !== "") {
+            var dummy = "#drug" + (i + 1).toString();
+            $(dummy).show();
+            $(dummy).attr("src", imgaddrs[i]);
+          } else {
+            var dummy = "#drug" + (i + 1).toString();
+            $(dummy).hide();            
+          }
+        }
+      }
+      function paindrg() {
+	      try {
+          var lvl = parseInt($("#painlvl").val());
+          if (lvl < 11 && lvl > 0) {
+            showimg(drugsrc[0], drugsrc[1], drugsrc[2], "");
+            var text = "Take either" + getdose(1) + "Tylenol," + getdose(2) + "Advil, or" + getdose(3) + "Aleve.";
+            if (lvl > 5) {
+              showimg(drugsrc[0], drugsrc[1], "", "");
+              text = "Alterante between" + getdose(1) + "Tylenol and" + getdose(2) + "Advil/See a doctor.";
+            }
+          } else {
+            $(".drugs").hide();
+            var text = "Enter a number between 1 and 10.";
+          }
+        } catch {
+          $(".drugs").hide();
+          var text = "Enter a number between 1 and 10.";
+        } finally {
+          $("#txtbox").text(text);
+	  }
+      }
+      function fatdrg() {
+        var lvl = $("#fatlvl").val();
+        if (lvl === "m") {
+          showimg(drugsrc[6], "", "", "");
+          var text = "Take" + getdose(7) + "Vivarin.";
+        } else if (lvl === "s") {
+          $(".drugs").hide();
+          var text = "See a doctor.";
+        } else {
+          $(".drugs").hide();
+          var text = "Enter m or s.";
+        }
+        $("#txtbox").text(text);
+      }
+      function cghdrg() {
+        try {
+          var lvl = parseInt($("#cghlvl").val());
+          if (lvl < 11 && lvl > 0) {
+            showimg(drugsrc[8], drugsrc[9], "", "");
+            var text = "Take either" + getdose(9) + "Mucinex or" + getdose(10) + "Benadryl.";
+            if (lvl > 5) {
+              $(".drugs").hide();
+              text = "See a doctor.";
+            }
+          } else {
+            $(".drugs").hide();
+            var text = "Enter a number between 1 and 10.";
+          }
+        } catch {
+          $(".drugs").hide();
+          var text = "Enter a number between 1 and 10.";
+        } finally {
+          $("#txtbox").text(text);
+        }
+      }
+      function survey() {
+        $("#home").hide();
+        $("#abtus").hide();
+        $("#images").hide();
+        $("#survey").show();
+        $("#profile").show();
+        $("body").css("background-color", "white");
+      }
+      function home() {
+        $("#home").show();
+        $("#abtus").show();
+        $("#images").show();
+        $("#survey").hide();
+        $("#profile").hide();
+        $("body").css("background-color", "#c1e5e8");
+      }
+      function findmed() {
+	      $("#fllwup").empty();
+	      $("#txtbox").text("");
+	      $(".drugs").hide();
+        var sympt = $("#symptoms").val();
+        switch (sympt) {
+          case "temp":
+            showimg(drugsrc[0], drugsrc[1], "", "");
+		        $("#txtbox").text("Take" + getdose(1) + "Tylenol or" + getdose(2) + "Advil.");
+            break;
+          case "pain":
+            $("#fllwup").append("<h3>Rate your pain on a scale of 1-10</h3><input type='text' id='painlvl'><br><br><button onclick='paindrg()'>Submit</button>");
+            break;
+          case "const":
+            showimg(drugsrc[3], drugsrc[4], "", "");
+		        $("#txtbox").text("Take" + getdose(4) + "Miralax or" + getdose(5) + "Dulcolax.");
+            break;
+          case "diar":
+            showimg(drugsrc[5], "", "", "");
+		        $("#txtbox").text("Take" + getdose(6) + "Imodium.");
+            break;
+          case "fat":
+		        $("#fllwup").append("<h3>Mild or Serious (m/s)</h3><input type='text' id='fatlvl'><br><br><button onclick='fatdrg()'>Submit</button>");
+            break;
+          case "ma":
+            showimg(drugsrc[0], drugsrc[7], drugsrc[1], drugsrc[2]);
+		        $("#txtbox").text("Take" + getdose(1) + "Tylenol," + getdose(8) + "Apirin," + getdose(2) + "Advil, or" + getdose(3) + "Aleve.");
+            break;
+          case "cgh":
+		        $("#fllwup").append("<h3>Rate your severeness/repetitiveness of your coughing</h3><input type='text' id='cghlvl'><br><br><button onclick='cghdrg()'>Submit</button>");
+            break;
+	        case "ha":
+            showimg(drugsrc[10], "", "", "")
+		        $("#txtbox").text("Take" + getdose(11) + "Excedrin.");
+		        break;
+          case "nsa":
+            showimg(drugsrc[11], "", "", "");
+		        $("#txtbox").text("Take" + getdose(12) + "Bonine.");
+            break;
+          case "ar":
+            showimg(drugsrc[12], drugsrc[13], "", "");
+		        $("#txtbox").text("Take" + getdose(13) + "Prilosec or" + getdose(14) + "Pepcid.");
+            break;
+        }
+      }
+    </script>
+  </body>
+</html>
